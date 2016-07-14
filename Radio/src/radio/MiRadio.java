@@ -14,58 +14,126 @@ package radio;
 public class MiRadio implements iRadio {
 
     private boolean botonP;
-    private String Frecuencia;
-            
+    private String frecuencia;
+    private String estacionActual;
+    private Boton[] memorias;    
     
-    
+    public MiRadio(){
+        this.botonP = true;
+        this.frecuencia = "fm";
+        this.estacionActual = "87.9";
+        this.memorias = new Boton[12];
+    }
     @Override
     public void on() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       botonP = true;
     }
 
     @Override
     public void off() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       botonP = false; 
     }
 
-    public boolean ison() {
-        botonP=!botonP;
+    @Override
+    public boolean isOn() {
         return botonP;
     }
 
     @Override
-    public String getFrecuency(String Frecuencia) {
-        return Frecuencia; 
+    public String getFrecuency() {
+        return frecuencia; 
        
     }
 
     @Override
-    public void setFrecuency( ) {
-        if.getFrecuency(String Frecuenca).toString().equals("am")}
-
-    @Override
-    public String getStation(String Estacion) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setFrecuency(String frecuencia) {
+        if (getFrecuency().equalsIgnoreCase("am")){
+        this.frecuencia = "fm";
+    }
+        else {
+        this.frecuencia = "am";
+        }      
     }
 
     @Override
-    public void setStation( ) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String getStation() {
+        return estacionActual;
     }
+
+    @Override
+    public void setStation(String Estacion ) {
+        this.estacionActual=Estacion;
+        }
 
     @Override
     public void Forward() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double Numero=0.0;
+        if (frecuencia.equalsIgnoreCase("am")){
+            Numero = Double.parseDouble(estacionActual);
+            if (Numero<1610){
+                Numero = Numero + 10;
+            }
+            else{
+                Numero = 530;
+            }
+            estacionActual = Double.toString(Numero);
+        }
+        if (frecuencia.equalsIgnoreCase("fm")){
+            Numero = Double.parseDouble(estacionActual);
+            if (Numero<107.9){
+                Numero = Numero + 0.2;
+            }
+            else{
+                Numero = 87.9;
+            }
+            estacionActual = Double.toString(Numero);
+        }
     }
 
     @Override
     public void Backward() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double Numero=0.0;
+        if (frecuencia.equalsIgnoreCase("am")){
+            Numero = Double.parseDouble(estacionActual);
+            if (Numero>530){
+                Numero = Numero - 10;
+            }
+            else{
+                Numero = 1610;
+            }
+            estacionActual = Double.toString(Numero);
+        }
+        if (frecuencia.equalsIgnoreCase("fm")){
+            Numero = Double.parseDouble(estacionActual);
+            if (Numero>87.9){
+                Numero = Numero - 0.2;
+            }
+            else{
+                Numero = 107.9;
+            }
+            estacionActual = Double.toString(Numero);
+        }
     }
 
-    @Override
-    public void setMemory(String station, String Frecuency, int Position) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setMemory(int Position) {
+        if (Position > 0 && Position <12){            
+            memorias[Position] = new Boton(frecuencia, estacionActual);
+        }
     }
-
+    public void getMemory(int position){
+        setFrecuency(memorias[position].getFrecuency());
+        setStation(memorias[position].getStation());
+    }
+    
+    public String toString(){
+        String texto = "El radio esta ";
+        if (isOn()){
+            texto+= "encendido";
+        }
+        else{
+            texto+= "apagado";
+        }
+        texto += "\n"+frecuencia+" "+estacionActual;         
+        return texto;
+    }
 }

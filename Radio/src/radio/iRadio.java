@@ -13,14 +13,13 @@ public interface iRadio {
 
     void on();
     void off();
-    boolean ison();
-    String getFrecuency(String Frecuencia);
-    void setFrecuency();
-    String getStation(String Estacion);
-    void setStation();
+    boolean isOn();
+    String getFrecuency();
+    void setFrecuency(String frecuencia);
+    String getStation();
+    void setStation(String Estacion);
     void Forward();
     void Backward();
-    void setMemory(String station, String Frecuency, int Position);
-    
+    void setMemory( int Position);
 }
 
