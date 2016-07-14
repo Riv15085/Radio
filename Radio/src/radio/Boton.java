@@ -1,19 +1,22 @@
 package radio;
-/* Clase principal Boton
+/* Clase Boton que guarda los valores en memoria
     Jorge Mario Tezen Cristales 15417
     Diego Fernando Rivera 15085
     Juan Pablo Caheque  */
     
 public class Boton{
 
-    String frecuency;
-    String station; 
+    String frecuency; //guarda la frecuencia
+    String station;  //guarda la estacion
     
+    
+    //metodo constructor de Boton
     public Boton (String frecuency, String station)
-    {
-        this.frecuency= frecuency;
+    {   this.frecuency= frecuency;
         this.station = station;
     }
+    
+    //metodo que imprie la frecuencia y esacion del boton
     public String Print() {
         return frecuency.concat("|").concat(station);
     }
