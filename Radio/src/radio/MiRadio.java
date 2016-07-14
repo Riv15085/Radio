@@ -126,9 +126,11 @@ public class MiRadio implements iRadio {
         }
     }
     
-    // 
+    // metodo que guarda estacion en frecuancia actuales en una posicion del array
     public void setMemory(int Position) {
-        if (Position > 0 && Position <12){            
+        //verifica que el dato ingresado sea valido por la caantidad de botones 
+        if (Position > 0 && Position <12){      
+            //instancia un boton donde se guarda la frecuencia y estacion actual 
             memorias[Position] = new Boton(frecuencia, estacionActual);
         }
     }
