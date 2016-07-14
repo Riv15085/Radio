@@ -2,7 +2,7 @@ package radio;
 /* Clase Boton que guarda los valores en memoria
     Jorge Mario Tezen Cristales 15417
     Diego Fernando Rivera 15085
-    Juan Pablo Caheque  */
+    Juan Pablo Caheque  15396*/
     
 public class Boton{
 
