@@ -1,44 +1,52 @@
 package radio;
 
 /**
+ * Clase que implement la interfaz 
  * Jorge Mario Tezen Cristales 15417
  * Diego Fernando Rivera Escobar 15085
  * Programación orientada a objetos
  */
 public class MiRadio implements iRadio {
 
-    private boolean botonP;
-    private String frecuencia;
-    private String estacionActual;
-    private Boton[] memorias;    
+    private boolean botonP;  // boton de Encendido y Apagado
+    private String frecuencia; // Am o Fm
+    private String estacionActual; // Muestra la estacion actual am o fm 
+    private Boton[] memorias;   //array de estaciones guardadas en memoria
     
+    //metodo Constructor se inicializan los atributos
     public MiRadio(){
         this.botonP = true;
         this.frecuencia = "fm";
         this.estacionActual = "87.9";
         this.memorias = new Boton[12];
     }
+    
+    // metodo enciende radio
     @Override
     public void on() {
        botonP = true;
     }
 
+//metodo apaga la radio
     @Override
     public void off() {
        botonP = false; 
     }
 
+//metodo que devuelve el estado del radio, si esta on o off
     @Override
     public boolean isOn() {
         return botonP;
     }
 
+//metodo que devuleve el estado de la frecuencia
     @Override
     public String getFrecuency() {
         return frecuencia; 
        
     }
 
+//metodo que cambia el estado de la frecuencia 
     @Override
     public void setFrecuency(String frecuencia) {
         if (getFrecuency().equalsIgnoreCase("am")){
@@ -49,6 +57,7 @@ public class MiRadio implements iRadio {
         }      
     }
 
+//imprime el contenido de la variable estacion actual 
     @Override
     public String getStation() {
         return estacionActual;
@@ -59,10 +68,14 @@ public class MiRadio implements iRadio {
         this.estacionActual=Estacion;
         }
 
+//metodo que avanza la estacion 
     @Override
     public void Forward() {
         double Numero=0.0;
+        
+        //si la frecuancia es am suma 10 hasta llegar a 1630 y vuelve a empezar
         if (frecuencia.equalsIgnoreCase("am")){
+            //convierte estacionActual a Double 
             Numero = Double.parseDouble(estacionActual);
             if (Numero<1610){
                 Numero = Numero + 10;
@@ -70,8 +83,11 @@ public class MiRadio implements iRadio {
             else{
                 Numero = 530;
             }
+            //regresa estacionActual a String
             estacionActual = Double.toString(Numero);
         }
+        
+        //si es fm suma 0.2 hasta llegar a 107.9
         if (frecuencia.equalsIgnoreCase("fm")){
             Numero = Double.parseDouble(estacionActual);
             if (Numero<107.9){
@@ -85,6 +101,7 @@ public class MiRadio implements iRadio {
     }
 
     @Override
+    // metodo que regresa la estacion 
     public void Backward() {
         double Numero=0.0;
         if (frecuencia.equalsIgnoreCase("am")){
@@ -108,17 +125,21 @@ public class MiRadio implements iRadio {
             estacionActual = Double.toString(Numero);
         }
     }
-
+    
+    // 
     public void setMemory(int Position) {
         if (Position > 0 && Position <12){            
             memorias[Position] = new Boton(frecuencia, estacionActual);
         }
     }
+    
+    //muestra la frecuancia y estacion de la posicion del array que se ingrese
     public void getMemory(int position){
         setFrecuency(memorias[position].getFrecuency());
         setStation(memorias[position].getStation());
     }
     
+    //metodo que muestra en pantalla el estado del radio,on/off y frecuanca con estacion
     public String toString(){
         String texto = "El radio esta ";
         if (isOn()){
