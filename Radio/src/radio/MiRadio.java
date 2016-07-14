@@ -2,6 +2,7 @@ package radio;
 
 /**
  * Clase que implement la interfaz 
+ * Juan Pablo Cahueque 15396
  * Jorge Mario Tezen Cristales 15417
  * Diego Fernando Rivera Escobar 15085
  * Programación orientada a objetos
