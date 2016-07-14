@@ -4,7 +4,7 @@ package radio;
  * Clase Interfaz Radio
  *Jorge Mario Tezen Cristales 15417
  *Diego Fernando Rivera 15085
- *Juan Pablo Cahueuque 
+ *Juan Pablo Cahueuque 15396
  */
  
 public interface iRadio {
