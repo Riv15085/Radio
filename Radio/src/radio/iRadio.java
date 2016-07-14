@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package radio;
 
 /**
- *
- * @author diego
+ * Clase Interfaz Radio
+ *Jorge Mario Tezen Cristales 15417
+ *Diego Fernando Rivera 15085
+ *Juan Pablo Cahueuque 
  */
+ 
 public interface iRadio {
-
+    
     void on();
     void off();
     boolean isOn();
@@ -21,5 +19,6 @@ public interface iRadio {
     void Forward();
     void Backward();
     void setMemory( int Position);
+    
 }
 
