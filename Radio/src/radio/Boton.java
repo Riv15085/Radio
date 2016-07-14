@@ -1,4 +1,9 @@
 package radio;
+/* Clase principal Boton
+    Jorge Mario Tezen Cristales 15417
+    Diego Fernando Rivera 15085
+    Juan Pablo Caheque  */
+    
 public class Boton{
 
     String frecuency;
