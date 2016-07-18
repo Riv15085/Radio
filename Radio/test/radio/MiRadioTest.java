@@ -45,8 +45,6 @@ public class MiRadioTest {
         System.out.println("on");
         MiRadio instance = new MiRadio();
         instance.on();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -57,8 +55,6 @@ public class MiRadioTest {
         System.out.println("off");
         MiRadio instance = new MiRadio();
         instance.off();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -68,11 +64,9 @@ public class MiRadioTest {
     public void testIsOn() {
         System.out.println("isOn");
         MiRadio instance = new MiRadio();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.isOn();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -82,11 +76,9 @@ public class MiRadioTest {
     public void testGetFrecuency() {
         System.out.println("getFrecuency");
         MiRadio instance = new MiRadio();
-        String expResult = "";
+        String expResult = "fm";
         String result = instance.getFrecuency();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -95,11 +87,9 @@ public class MiRadioTest {
     @Test
     public void testSetFrecuency() {
         System.out.println("setFrecuency");
-        String frecuencia = "";
+        String frecuencia = "am";
         MiRadio instance = new MiRadio();
         instance.setFrecuency(frecuencia);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -109,11 +99,9 @@ public class MiRadioTest {
     public void testGetStation() {
         System.out.println("getStation");
         MiRadio instance = new MiRadio();
-        String expResult = "";
+        String expResult = "87.9";
         String result = instance.getStation();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -125,8 +113,6 @@ public class MiRadioTest {
         String Estacion = "";
         MiRadio instance = new MiRadio();
         instance.setStation(Estacion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -137,8 +123,7 @@ public class MiRadioTest {
         System.out.println("Forward");
         MiRadio instance = new MiRadio();
         instance.Forward();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
     }
 
     /**
@@ -149,8 +134,6 @@ public class MiRadioTest {
         System.out.println("Backward");
         MiRadio instance = new MiRadio();
         instance.Backward();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -159,26 +142,10 @@ public class MiRadioTest {
     @Test
     public void testSetMemory() {
         System.out.println("setMemory");
-        int Position = 0;
+        int Position = 1;
         MiRadio instance = new MiRadio();
         instance.setMemory(Position);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of getMemory method, of class MiRadio.
-     */
-    @Test
-    public void testGetMemory() {
-        System.out.println("getMemory");
-        int position = 0;
-        MiRadio instance = new MiRadio();
-        instance.getMemory(position);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of toString method, of class MiRadio.
      */
@@ -186,11 +153,9 @@ public class MiRadioTest {
     public void testToString() {
         System.out.println("toString");
         MiRadio instance = new MiRadio();
-        String expResult = "";
+        String expResult = instance.toString();
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

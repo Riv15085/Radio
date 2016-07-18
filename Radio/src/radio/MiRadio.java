@@ -128,6 +128,7 @@ public class MiRadio implements iRadio {
     }
     
     // metodo que guarda estacion en frecuancia actuales en una posicion del array
+    @Override
     public void setMemory(int Position) {
         //verifica que el dato ingresado sea valido por la caantidad de botones 
         if (Position > 0 && Position <12){      
@@ -143,6 +144,7 @@ public class MiRadio implements iRadio {
     }
     
     //metodo que muestra en pantalla el estado del radio,on/off y frecuanca con estacion
+    @Override
     public String toString(){
         String texto = "El radio esta ";
         if (isOn()){
